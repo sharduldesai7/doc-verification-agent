@@ -1,0 +1,17 @@
+{
+  "name": "income-verification",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev:api": "pnpm --filter @iv/api dev",
+    "dev:web": "pnpm --filter @iv/web dev",
+    "build": "pnpm --filter @iv/web build",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm --filter @iv/api test",
+    "db:generate": "pnpm --filter @iv/api db:generate",
+    "db:migrate": "pnpm --filter @iv/api db:migrate"
+  },
+  "devDependencies": {
+    "typescript": "~5.9.2"
+  }
+}
