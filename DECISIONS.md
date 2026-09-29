@@ -2,7 +2,7 @@
 
 | Topic | Choice |
 | --- | --- |
-| 6.1 divisors | Non-monthly bases (annual, semimonthly, biweekly, weekly) all divide the stated amount by 12, i.e. the amount is treated as annualized. Monthly divides by 1. Single table `BASIS_DIVISORS` in `verification/basis.ts`. If the reference amount is actually per pay period, this must change. |
+| 6.1 divisors | **Confirmed by the product owner:** stated income amounts are annual. Every non-monthly basis (annual, semimonthly, biweekly, weekly) divides the stated amount by 12; monthly divides by 1. Single table `BASIS_DIVISORS` in `verification/basis.ts`. A row whose basis reads "Monthly" is taken at face value as a monthly amount, so an annual figure mislabelled "Monthly" gives a target 12 times too high and goes to Manual Review. |
 | 6.3 selection order | **Fixed.** One payslip is chosen per expected month before validity exclusions, so duplicate or out-of-window months can never displace a required older month. Best candidate per month: valid gross and not inconsistent, then consistent evidence, then latest pay date. |
 | Undated payslips | Never counted; produce a `warn` on `month_coverage`. |
 | Pay month source | `payDate`, falling back to `payPeriodEnd`. |
